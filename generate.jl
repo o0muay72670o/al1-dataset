@@ -1,8 +1,6 @@
-#URL: https://doi.org/10.48550/arXiv.2404.01238
-#System:  ηc(1S)
-#Gaussian Expansion Method random generator
+#URL: https://juliafewbody.github.io/TwoBody.jl/dev/GEM/
+#Gaussian Expansion Method grid generator
 
-N_samples = 100
 Alpha = Float64[]
 Lambda = Float64[]
 sigma = Float64[]
@@ -68,6 +66,6 @@ end
 end
 end
 end
-df = DataFrame(alpha = Alpha, Lambda = Lambda, sigma = sigma, Kappa = Kappa, Kappa_ = Kappa_ ,A = A, B = B, m1 = results_m1, m2 = results_m2, E0 = results_E0, E1 = results_E1, E2 = results_E2, E3 = results_E3)
+df = DataFrame(Alpha = Alpha, Lambda = Lambda, Sigma = sigma, Kappa = Kappa, Kappa_ = Kappa_ ,A = A, B = B, m1 = results_m1, m2 = results_m2, E0 = results_E0, E1 = results_E1, E2 = results_E2, E3 = results_E3)
 println(df)
-CSV.write("data/$(N_samples)MWOgen.csv", df)
+CSV.write("data.csv", df)
