@@ -1,0 +1,10 @@
+[deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+TwoBody = "a92d7657-722c-45a6-9d18-9da4c8a753b6"
+
+[compat]
+julia = "1.10"
+CSV = "=0.10.17"
+DataFrames = "=1.8.2"
+TwoBody = "=0.0.12"
