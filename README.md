@@ -27,15 +27,29 @@ The 52,488 rows in [`data.csv`](./data.csv) form the Cartesian product of the di
 
 | Column | Unit | Values |
 | --- | --- | --- |
-| `alpha` | `GeV` | `0.6`, `0.8`, `1.0` |
-| `Lambda` | `GeV^2` | `0.10`, `0.15`, `0.20` |
-| `sigma` | Dimensionless | `-3`, `1` |
-| `Kappa` | Dimensionless | `0.4`, `0.5`, `0.6` |
-| `Kappa_` | Dimensionless | `1.80`, `1.85`, `1.90` |
+| `Lambda` | `GeV` | `0.6`, `0.8`, `1.0` |
+| `lambda` | `GeV^2` | `0.10`, `0.15`, `0.20` |
+| `sigma1_dot_sigma2` | Dimensionless | `-3`, `1` |
+| `kappa` | Dimensionless | `0.4`, `0.5`, `0.6` |
+| `kappa_prime` | Dimensionless | `1.80`, `1.85`, `1.90` |
 | `A` | `GeV^(B-1)` | `1.60`, `1.65`, `1.70` |
 | `B` | Dimensionless | `0.20`, `0.22`, `0.24` |
 | `m1`, `m2` | `GeV` | `1.0`, `2.0`, `3.0`, `4.0`, `5.0`, `6.0` |
 | `E0` - `E3` | `GeV` | Computed values in `data.csv` |
+
+### Column name migration
+
+The column names now match the AL1 potential notation. Numerical values, units, and column order are unchanged.
+
+| Previous name | Current name |
+| --- | --- |
+| `Alpha` (`alpha` in the published CSV) | `Lambda` |
+| `Lambda` | `lambda` |
+| `Sigma` (`sigma` in the published CSV) | `sigma1_dot_sigma2` |
+| `Kappa` | `kappa` |
+| `Kappa_` | `kappa_prime` |
+
+Downstream code should rename these columns simultaneously using the mapping above, since the previous `Lambda` column is now `lambda`, while the previous `Alpha`/`alpha` column is now `Lambda`.
 
 ## Usage
 
