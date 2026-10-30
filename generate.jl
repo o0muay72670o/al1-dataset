@@ -6,7 +6,7 @@ using TwoBody
 
 offsets = Float64[]
 linear_coefficients = Float64[]
-spin_eigenvalues = Float64[]
+spin_coupling = Float64[]
 coulomb_coefficients = Float64[]
 spin_spin_coefficients = Float64[]
 A = Float64[]
@@ -47,7 +47,7 @@ for b in [0.20, 0.22, 0.24]
 
 	push!(offsets,Lambda)
 	push!(linear_coefficients, lambda)
-	push!(spin_eigenvalues, sigma1_dot_sigma2)
+	push!(spin_coupling, sigma1_dot_sigma2)
 	push!(coulomb_coefficients, kappa)
 	push!(spin_spin_coefficients,kappa_prime)
 	push!(A, a)
@@ -69,6 +69,6 @@ end
 end
 end
 
-df = DataFrame(Lambda = offsets, lambda = linear_coefficients, sigma1_dot_sigma2 = spin_eigenvalues, kappa = coulomb_coefficients, kappa_prime = spin_spin_coefficients ,A = A, B = B, m1 = results_m1, m2 = results_m2, E0 = results_E0, E1 = results_E1, E2 = results_E2, E3 = results_E3)
+df = DataFrame(Lambda = offsets, lambda = linear_coefficients, sigma1_dot_sigma2 = spin_coupling, kappa = coulomb_coefficients, kappa_prime = spin_spin_coefficients ,A = A, B = B, m1 = results_m1, m2 = results_m2, E0 = results_E0, E1 = results_E1, E2 = results_E2, E3 = results_E3)
 println(df)
 CSV.write("data.csv", df)
